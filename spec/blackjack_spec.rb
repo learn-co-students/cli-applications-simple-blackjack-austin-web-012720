@@ -7,7 +7,7 @@ end
 
 describe "#deal_card" do
   it "generates a random number between 1-11" do
-    20.times do 
+    20.times do
       card = deal_card
       expect(card).to be > 0
       expect(card).to be < 12
@@ -106,7 +106,7 @@ describe "#hit?" do
     expect($stdout).to receive(:puts).with("Type 'h' to hit or 's' to stay")
     expect(self).to receive(:get_user_input).and_return("k")
     expect(self).to receive(:get_user_input).and_return("s")
-    
+
     hit?(7)
   end
 
@@ -116,11 +116,11 @@ describe "#runner" do
   before(:each) do
     def get_user_input
       "h"
-    end 
+    end
   end
 
-  it "calls on the #welcome method, 
-  then on the #initial_round method, 
+  it "calls on the #welcome method,
+  then on the #initial_round method,
   then calls #hit? and #display_card_total methods
   -until- the card sum is greater than 21,
   then calls on the #end_game method" do
